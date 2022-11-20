@@ -12,7 +12,7 @@ class DBMaquina():
         
         if self._nombre != '' and mode == 'new':
             self._id_maquina = randrange(1111,9999,1)
-            sql = 'INSERT INTO maquina(id_maquina,nombre_maquina,disponible) VALUES("{}","{}",0)'.format(self._id_maquina, self._nombre)
+            sql = 'INSERT INTO maquina(id_maquina,nombre_maquina,disponible) VALUES("{}","{}",1)'.format(self._id_maquina, self._nombre)
             try:
                 connection = create_connection()
                 cursor = connection.cursor()
@@ -21,6 +21,7 @@ class DBMaquina():
                 cursor.close()
                 print("logrado")
             except Exception as e:
+                print("************ERROR AL METER LA NUEVA MAQUINA******************")
                 print(e)
                 raise
         elif self._nombre != '' and mode == 'select':
@@ -81,6 +82,44 @@ class DBMaquina():
         except Exception as e: 
             print(e)
             raise
+
+    
+    def select_maquina_info(self):
+        print("select 222")
+        sql = 'SELECT id_maquina, nombre_maquina, disponible from maquina where id_maquina = {}'.format(self._id_maquina)
+        objeto_usuario = []
+        try: 
+            conn = create_connection()
+            cur = conn.cursor()
+            cur.execute(sql)
+            usuario = cur.fetchone()
+            #print(usuario)
+            objeto_usuario = [usuario[0],usuario[1],usuario[2]]
+            print("objeto usuario",objeto_usuario)
+           
+            self._nombre = usuario[1]
+            self._disponible = usuario[2]
+            print(self._nombre)
+            #print("self nombre")
+            #print(self._nombre)
+            cur.close()
+            return objeto_usuario
+        except Exception as e:
+            print(e)
+            raise
+    
+    def update_maquina(self, name):
+        sql = 'UPDATE maquina SET nombre_maquina = "{}" WHERE id_maquina = {}'.format(name, self._id_maquina)
+        try:
+            connection = create_connection()
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            connection.commit()
+            cursor.close()
+        except Exception as e:
+            print(e)
+            raise
+
     
     @property 
     def id_maquina(self):

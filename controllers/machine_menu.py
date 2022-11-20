@@ -7,6 +7,9 @@ from database.maquina import DBMaquina
 #from interface import components
 import os
 from interface.general_custom_ui import GeneralCustomUi
+from controllers.add_machine_window import PartMachineWindow
+from controllers.edit_machine_window import EditMachineWindow
+from controllers.delete_machine_window import DeleteMachineWindow
 
 
 class MachineMenuForm(QWidget,DetailWindow):
@@ -17,6 +20,25 @@ class MachineMenuForm(QWidget,DetailWindow):
         self.ui = GeneralCustomUi(self)
         self.config_table()
         self.set_table_data()
+        self.view_button.clicked.connect(self.view_button_clicked)
+        self.edit_button.clicked.connect(self.edit_button_clicked)
+        self.finish_button.clicked.connect(self.finish_button_clicked)
+
+    def finish_button_clicked(self):
+        delete_machine = DeleteMachineWindow()
+        delete_machine.show()
+        self.close()
+
+    def edit_button_clicked(self):
+        edit_machine = EditMachineWindow()
+        edit_machine.show()
+        self.close()
+
+    def view_button_clicked(self):
+        new_machine = PartMachineWindow()
+        new_machine.show()
+        self.close()
+
 
     def config_table(self):
         column_labels = ("ID" , "NOMBRE MAQUINA")
