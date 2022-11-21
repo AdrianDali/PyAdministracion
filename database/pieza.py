@@ -74,6 +74,20 @@ class DBPieza():
             print(e)
             raise
 
+    def update_pieza(self, name):
+        sql = 'UPDATE pieza SET nombre_pieza = "{}" WHERE id_pieza = {}'.format(name, self._id_pieza)
+        try:
+            connection = create_connection()
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            connection.commit()
+            cursor.close()
+        except Exception as e:
+            print(e)
+            raise
+
+
+
     @property
     def id_pieza(self):
             return(self._id_pieza)

@@ -5,6 +5,7 @@ from interface.part_menu import DetailWindow
 from database.proceso import DBProceso
 from database.pieza import DBPieza
 from controllers.add_part_window import AddPartWindowForm 
+from controllers.edit_part_window import EditPartWindow
 #from interface import components
 import os
 from interface.general_custom_ui import GeneralCustomUi
@@ -19,10 +20,18 @@ class PartMenuForm(QWidget,DetailWindow):
         self.config_table()
         self.set_table_data()
         self.view_button.clicked.connect(self.createPart)
+        self.edit_button.clicked.connect(self.EditPart)
+
+
+    def EditPart(self):
+        self.part_machine_window = EditPartWindow()
+        self.part_machine_window.show()
+        self.close()
 
     def createPart(self):
         self.part_machine_window = AddPartWindowForm()
         self.part_machine_window.show()
+        self.close()
 
 
     def config_table(self):

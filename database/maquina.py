@@ -68,6 +68,22 @@ class DBMaquina():
         except Exception as e:
             print(e)
             raise
+
+    def select_name_maquinas(self):
+        sql = 'SELECT nombre_maquina from maquina'
+        try:
+            connection = create_connection()
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            maquinas = cursor.fetchall()
+            lista  = []
+            for maquina in maquinas:
+                lista.append(maquina[0])
+                cursor.close()
+            return lista
+        except Exception as e:
+            print(e)
+            raise
     
     def select_id_maquina(self):
         print(self._nombre)

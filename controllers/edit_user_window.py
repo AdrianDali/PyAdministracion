@@ -16,7 +16,10 @@ class EditUserWindowForm(QWidget,DetailWindow):
         super().__init__()
         self.setupUi(self)
         self.ui = GeneralCustomUi(self)
-        self.comboBox.addItems(DBUsuario().select_name_usuario_enabled())
+        datos = DBUsuario().select_name_usuario_enabled() 
+        datos.insert(0,"Seleccione un usuario")
+        
+        self.comboBox.addItems(datos)
         self.add_edit_button_3.clicked.connect(self.edit_user)
         self.comboBox.currentIndexChanged.connect(self.set_data)
         self.cancel_button.clicked.connect(self.cancel)

@@ -108,7 +108,7 @@ class DBProceso():
                 raise
 
     def select_all_procesos(self):
-            sql = 'SELECT p.id_proceso, u.nombre as nombre_usuario,p.nombre, m.nombre_maquina, i.nombre_pieza, p.hora_inicio, p.hora_termino ,p.numero_piezas , p.peso_merma,p.observaciones FROM proceso as p join maquina as m on m.id_maquina = p.id_maquina  join pieza as i on p.id_pieza = i.id_pieza join usuarios as u on u.id_usuario = p.id_nombre'
+            sql = 'SELECT p.id_proceso, u.nombre as nombre_usuario,p.nombre, m.nombre_maquina, i.nombre_pieza, p.hora_inicio, p.hora_termino ,p.numero_piezas , p.peso_merma,p.observaciones, p.piezas_neto FROM proceso as p join maquina as m on m.id_maquina = p.id_maquina  join pieza as i on p.id_pieza = i.id_pieza join usuarios as u on u.id_usuario = p.id_nombre'
             try:
                 connection = create_connection()
                 cursor = connection.cursor()

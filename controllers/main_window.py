@@ -12,9 +12,10 @@ import pyqtgraph as pg
 from controllers.user_menu import UserMenuForm 
 from controllers.machine_menu import MachineMenuForm
 from controllers.part_menu import PartMenuForm
+from controllers.proceso_filtrado_window import MainWindowForm as ProcesoFiltradoWindow
 from random import randint 
 from PyQt5.QtGui import QPainter
-from PyQt5.QtChart import QChart, QChartView, QBarCategoryAxis,QBarSet,QPercentBarSeries
+#from PyQt5.QtChart import QChart, QChartView, QBarCategoryAxis,QBarSet,QPercentBarSeries
 #from pyqtgraph.opengl import GLViewWidget
 from pyqtgraph import plot,PlotWidget ,PlotItem, PlotDataItem, PlotCurveItem, GraphicsLayoutWidget,BarGraphItem
 
@@ -31,6 +32,12 @@ class MainWindowForm(QWidget,MainWindow):
         self.new_recipe_button.clicked.connect(self.new_recipe)
         self.new_recipe_button_3.clicked.connect(self.machine_menu)
         self.new_recipe_button_4.clicked.connect(self.part_menu)
+        self.view_button.clicked.connect(self.view_recipe)
+
+
+    def view_recipe(self):
+        win = ProcesoFiltradoWindow()
+        win.show() 
 
     def new_recipe(self):
         win = UserMenuForm()
