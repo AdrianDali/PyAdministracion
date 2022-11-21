@@ -58,6 +58,7 @@ class MainWindowForm(QWidget,MainWindow):
         print(machine)
         part = self.comboBox_3.currentText()
         print(part)
+        self.populate_table(DBProceso().filter_procesos(user,machine,part))
         
     def on_combobox_machine_changed(self):
         user = self.comboBox.currentText()
@@ -66,6 +67,7 @@ class MainWindowForm(QWidget,MainWindow):
         print(machine)
         part = self.comboBox_3.currentText()
         print(part) 
+        self.populate_table(DBProceso().filter_procesos(user,machine,part))
 
     def on_combobox_part_changed(self):
         user = self.comboBox.currentText()
@@ -74,6 +76,9 @@ class MainWindowForm(QWidget,MainWindow):
         print(machine)
         part = self.comboBox_3.currentText()
         print(part)
+        self.populate_table(DBProceso().filter_procesos(user,machine,part))
+
+            
 
     def new_recipe(self):
         win = UserMenuForm()
