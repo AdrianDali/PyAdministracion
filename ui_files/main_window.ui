@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1296</width>
+    <width>1460</width>
     <height>567</height>
    </rect>
   </property>
@@ -463,16 +463,6 @@ QPushButton::hover {background-color : #ffc13b};</string>
             </item>
             <item>
              <widget class="QTableWidget" name="recipes_table"/>
-            </item>
-            <item>
-             <widget class="QWidget" name="widget" native="true">
-              <property name="minimumSize">
-               <size>
-                <width>250</width>
-                <height>250</height>
-               </size>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>

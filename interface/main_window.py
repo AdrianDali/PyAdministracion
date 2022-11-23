@@ -24,7 +24,7 @@ class MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1296, 567)
+        MainWindow.resize(1460, 567)
         MainWindow.setStyleSheet(u"border-radius: 5px;")
         self.verticalLayout = QVBoxLayout(MainWindow)
         self.verticalLayout.setSpacing(0)
@@ -205,12 +205,6 @@ class MainWindow(object):
         self.recipes_table.setObjectName(u"recipes_table")
 
         self.verticalLayout_4.addWidget(self.recipes_table)
-
-        self.widget = QWidget(self.content_frame)
-        self.widget.setObjectName(u"widget")
-        self.widget.setMinimumSize(QSize(250, 250))
-
-        self.verticalLayout_4.addWidget(self.widget)
 
 
         self.verticalLayout_3.addWidget(self.content_frame)

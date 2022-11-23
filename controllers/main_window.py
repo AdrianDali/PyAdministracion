@@ -12,6 +12,7 @@ import pyqtgraph as pg
 from controllers.user_menu import UserMenuForm 
 from controllers.machine_menu import MachineMenuForm
 from controllers.part_menu import PartMenuForm
+from controllers.graficas_produccion_window import MainWindowForm as GraficasProduccionWindow
 from controllers.proceso_filtrado_window import MainWindowForm as ProcesoFiltradoWindow
 from random import randint 
 from PyQt5.QtGui import QPainter
@@ -33,6 +34,11 @@ class MainWindowForm(QWidget,MainWindow):
         self.new_recipe_button_3.clicked.connect(self.machine_menu)
         self.new_recipe_button_4.clicked.connect(self.part_menu)
         self.view_button.clicked.connect(self.view_recipe)
+        self.new_recipe_button_2.clicked.connect(self.graphics)
+
+    def graphics(self):
+        win = GraficasProduccionWindow()
+        win.show()
 
 
     def view_recipe(self):
@@ -75,25 +81,7 @@ class MainWindowForm(QWidget,MainWindow):
         #series.append(set3)
         #series.append(set4)
 
-        #chart = QChart()
-        #chart.addSeries(series)
-        #chart.setTitle("Leading Tech Companies in 2021")
-        #chart.setAnimationOptions(QChart.SeriesAnimations)
 
-
-        #categories = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        #axis = QChart.QBarCategoryAxis()
-        #axis.append(categories)
-        #chart.createDefaultAxes()
-        #chart.setAxisX(axis, series)
-
-        #chart.legend().setVisible(True)
-        #chart.legend().setAlignment(Qt.AlignBottom)
-
-
-        #self.chart_view= QChartView(chart)
-        #self.chart_view.setRenderHint(QPainter.Antialiasing)
-        #self.chart_view.chart().setTheme(QChart.ChartThemeDark)
        
 
         #sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
