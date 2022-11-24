@@ -1,7 +1,7 @@
 from cmath import e
 #from DBmysql import create_
 import numpy as np
-import datetime
+from datetime   import datetime
 from database.connection import create_connection
 from random import randrange
 
@@ -139,8 +139,10 @@ class DBProceso():
             print(e)
             raise
 
-    def select_piezas_neto_fecha(self):
-        sql = 'SELECT nombre_maquina from maquina where disponible = 1 '
+    def select_piezas_neto_fecha(self,day):
+        now = datetime.now().strftime("%m")        
+        print(now + "mes")
+        sql = "SELECT piezas_neto FROM proceso  WHERE hora_inicio BETWEEN '2022-{}-{} 00:00:00' AND '2022-{}-{} 23:59:00';".format(now,day, now,day)
         try:
             conn = create_connection()
             cur = conn.cursor()
@@ -150,7 +152,35 @@ class DBProceso():
             for maquina in maquinas:
                 lista.append(maquina[0])
             cur.close()
-            return lista
+
+            sum_lista = 0
+
+            for i in lista:
+                sum_lista += i
+            return sum_lista
+        except Exception as e:
+            print(e)
+            raise
+
+    def select_piezas_neto_fecha_user(self,day):
+        now = datetime.now().strftime("%m")        
+        print(now + "mes")
+        sql = "SELECT piezas_neto FROM proceso  WHERE hora_inicio BETWEEN '2022-{}-{} 00:00:00' AND '2022-{}-{} 23:59:00';".format(now,day, now,day)
+        try:
+            conn = create_connection()
+            cur = conn.cursor()
+            cur.execute(sql)
+            maquinas = cur.fetchall()
+            lista = []
+            for maquina in maquinas:
+                lista.append(maquina[0])
+            cur.close()
+
+            sum_lista = 0
+
+            for i in lista:
+                sum_lista += i
+            return sum_lista
         except Exception as e:
             print(e)
             raise

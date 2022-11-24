@@ -122,10 +122,40 @@ class DetailWindow(object):
 
         self.gridLayout.addWidget(self.graphicsView_3, 4, 0, 1, 1)
 
-        self.graphicsView_2 = PlotWidget(self.frame)
-        self.graphicsView_2.setObjectName(u"graphicsView_2")
+        self.action_bar_frame_5 = QFrame(self.frame)
+        self.action_bar_frame_5.setObjectName(u"action_bar_frame_5")
+        self.action_bar_frame_5.setMinimumSize(QSize(0, 39))
+        self.action_bar_frame_5.setFrameShape(QFrame.StyledPanel)
+        self.action_bar_frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.action_bar_frame_5)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.comboBox_3 = QComboBox(self.action_bar_frame_5)
+        self.comboBox_3.setObjectName(u"comboBox_3")
+        self.comboBox_3.setStyleSheet(u"background-color: white;\n"
+"border: 1px solid #ff6e40;")
 
-        self.gridLayout.addWidget(self.graphicsView_2, 4, 1, 1, 1)
+        self.horizontalLayout_8.addWidget(self.comboBox_3)
+
+
+        self.gridLayout.addWidget(self.action_bar_frame_5, 5, 0, 1, 1)
+
+        self.action_bar_frame_14 = QFrame(self.frame)
+        self.action_bar_frame_14.setObjectName(u"action_bar_frame_14")
+        self.action_bar_frame_14.setMinimumSize(QSize(0, 39))
+        self.action_bar_frame_14.setFrameShape(QFrame.StyledPanel)
+        self.action_bar_frame_14.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.action_bar_frame_14)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.title_label_5 = QLabel(self.action_bar_frame_14)
+        self.title_label_5.setObjectName(u"title_label_5")
+        self.title_label_5.setFont(font)
+        self.title_label_5.setStyleSheet(u"color: black;")
+        self.title_label_5.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_17.addWidget(self.title_label_5)
+
+
+        self.gridLayout.addWidget(self.action_bar_frame_14, 3, 1, 1, 1)
 
         self.action_bar_frame_4 = QFrame(self.frame)
         self.action_bar_frame_4.setObjectName(u"action_bar_frame_4")
@@ -134,83 +164,38 @@ class DetailWindow(object):
         self.action_bar_frame_4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.action_bar_frame_4)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.action_bar_frame_8 = QFrame(self.action_bar_frame_4)
-        self.action_bar_frame_8.setObjectName(u"action_bar_frame_8")
-        self.action_bar_frame_8.setMinimumSize(QSize(0, 39))
-        self.action_bar_frame_8.setFrameShape(QFrame.StyledPanel)
-        self.action_bar_frame_8.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_11 = QHBoxLayout(self.action_bar_frame_8)
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.comboBox_4 = QComboBox(self.action_bar_frame_8)
+        self.comboBox_4 = QComboBox(self.action_bar_frame_4)
         self.comboBox_4.setObjectName(u"comboBox_4")
+        self.comboBox_4.setStyleSheet(u"background-color: white;\n"
+"border: 1px solid #ff6e40;")
 
-        self.horizontalLayout_11.addWidget(self.comboBox_4)
-
-
-        self.horizontalLayout_7.addWidget(self.action_bar_frame_8)
+        self.horizontalLayout_7.addWidget(self.comboBox_4)
 
 
         self.gridLayout.addWidget(self.action_bar_frame_4, 5, 1, 1, 1)
 
-        self.action_bar_frame_3 = QFrame(self.frame)
-        self.action_bar_frame_3.setObjectName(u"action_bar_frame_3")
-        self.action_bar_frame_3.setMinimumSize(QSize(0, 39))
-        self.action_bar_frame_3.setFrameShape(QFrame.StyledPanel)
-        self.action_bar_frame_3.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_6 = QHBoxLayout(self.action_bar_frame_3)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.action_bar_frame_6 = QFrame(self.action_bar_frame_3)
-        self.action_bar_frame_6.setObjectName(u"action_bar_frame_6")
-        self.action_bar_frame_6.setMinimumSize(QSize(0, 39))
-        self.action_bar_frame_6.setFrameShape(QFrame.StyledPanel)
-        self.action_bar_frame_6.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_9 = QHBoxLayout(self.action_bar_frame_6)
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.comboBox_2 = QComboBox(self.action_bar_frame_6)
-        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.action_bar_frame_13 = QFrame(self.frame)
+        self.action_bar_frame_13.setObjectName(u"action_bar_frame_13")
+        self.action_bar_frame_13.setMinimumSize(QSize(0, 39))
+        self.action_bar_frame_13.setFrameShape(QFrame.StyledPanel)
+        self.action_bar_frame_13.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_16 = QHBoxLayout(self.action_bar_frame_13)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.title_label_3 = QLabel(self.action_bar_frame_13)
+        self.title_label_3.setObjectName(u"title_label_3")
+        self.title_label_3.setFont(font)
+        self.title_label_3.setStyleSheet(u"color: black;")
+        self.title_label_3.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_9.addWidget(self.comboBox_2)
+        self.horizontalLayout_16.addWidget(self.title_label_3)
 
 
-        self.horizontalLayout_6.addWidget(self.action_bar_frame_6)
-
-
-        self.gridLayout.addWidget(self.action_bar_frame_3, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.action_bar_frame_13, 0, 1, 1, 1)
 
         self.graphicsView = PlotWidget(self.frame)
         self.graphicsView.setObjectName(u"graphicsView")
 
         self.gridLayout.addWidget(self.graphicsView, 1, 0, 1, 1)
-
-        self.graphicsView_4 = PlotWidget(self.frame)
-        self.graphicsView_4.setObjectName(u"graphicsView_4")
-
-        self.gridLayout.addWidget(self.graphicsView_4, 1, 1, 1, 1)
-
-        self.action_bar_frame_5 = QFrame(self.frame)
-        self.action_bar_frame_5.setObjectName(u"action_bar_frame_5")
-        self.action_bar_frame_5.setMinimumSize(QSize(0, 39))
-        self.action_bar_frame_5.setFrameShape(QFrame.StyledPanel)
-        self.action_bar_frame_5.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_8 = QHBoxLayout(self.action_bar_frame_5)
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.action_bar_frame_7 = QFrame(self.action_bar_frame_5)
-        self.action_bar_frame_7.setObjectName(u"action_bar_frame_7")
-        self.action_bar_frame_7.setMinimumSize(QSize(0, 39))
-        self.action_bar_frame_7.setFrameShape(QFrame.StyledPanel)
-        self.action_bar_frame_7.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_10 = QHBoxLayout(self.action_bar_frame_7)
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.comboBox_3 = QComboBox(self.action_bar_frame_7)
-        self.comboBox_3.setObjectName(u"comboBox_3")
-
-        self.horizontalLayout_10.addWidget(self.comboBox_3)
-
-
-        self.horizontalLayout_8.addWidget(self.action_bar_frame_7)
-
-
-        self.gridLayout.addWidget(self.action_bar_frame_5, 5, 0, 1, 1)
 
         self.action_bar_frame_9 = QFrame(self.frame)
         self.action_bar_frame_9.setObjectName(u"action_bar_frame_9")
@@ -219,20 +204,12 @@ class DetailWindow(object):
         self.action_bar_frame_9.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.action_bar_frame_9)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.action_bar_frame_10 = QFrame(self.action_bar_frame_9)
-        self.action_bar_frame_10.setObjectName(u"action_bar_frame_10")
-        self.action_bar_frame_10.setMinimumSize(QSize(0, 39))
-        self.action_bar_frame_10.setFrameShape(QFrame.StyledPanel)
-        self.action_bar_frame_10.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_13 = QHBoxLayout(self.action_bar_frame_10)
-        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.comboBox_5 = QComboBox(self.action_bar_frame_10)
-        self.comboBox_5.setObjectName(u"comboBox_5")
+        self.comboBox = QComboBox(self.action_bar_frame_9)
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setStyleSheet(u"background-color: white;\n"
+"border: 1px solid #ff6e40;")
 
-        self.horizontalLayout_13.addWidget(self.comboBox_5)
-
-
-        self.horizontalLayout_12.addWidget(self.action_bar_frame_10)
+        self.horizontalLayout_12.addWidget(self.comboBox)
 
 
         self.gridLayout.addWidget(self.action_bar_frame_9, 2, 0, 1, 1)
@@ -248,28 +225,17 @@ class DetailWindow(object):
         self.title_label_2.setObjectName(u"title_label_2")
         self.title_label_2.setFont(font)
         self.title_label_2.setStyleSheet(u"color: black;")
+        self.title_label_2.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_14.addWidget(self.title_label_2)
 
 
         self.gridLayout.addWidget(self.action_bar_frame_11, 0, 0, 1, 1)
 
-        self.action_bar_frame_13 = QFrame(self.frame)
-        self.action_bar_frame_13.setObjectName(u"action_bar_frame_13")
-        self.action_bar_frame_13.setMinimumSize(QSize(0, 39))
-        self.action_bar_frame_13.setFrameShape(QFrame.StyledPanel)
-        self.action_bar_frame_13.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_16 = QHBoxLayout(self.action_bar_frame_13)
-        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.title_label_3 = QLabel(self.action_bar_frame_13)
-        self.title_label_3.setObjectName(u"title_label_3")
-        self.title_label_3.setFont(font)
-        self.title_label_3.setStyleSheet(u"color: black;")
+        self.graphicsView_2 = PlotWidget(self.frame)
+        self.graphicsView_2.setObjectName(u"graphicsView_2")
 
-        self.horizontalLayout_16.addWidget(self.title_label_3)
-
-
-        self.gridLayout.addWidget(self.action_bar_frame_13, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.graphicsView_2, 4, 1, 1, 1)
 
         self.action_bar_frame_12 = QFrame(self.frame)
         self.action_bar_frame_12.setObjectName(u"action_bar_frame_12")
@@ -282,28 +248,34 @@ class DetailWindow(object):
         self.title_label_4.setObjectName(u"title_label_4")
         self.title_label_4.setFont(font)
         self.title_label_4.setStyleSheet(u"color: black;")
+        self.title_label_4.setAlignment(Qt.AlignCenter)
 
         self.horizontalLayout_15.addWidget(self.title_label_4)
 
 
         self.gridLayout.addWidget(self.action_bar_frame_12, 3, 0, 1, 1)
 
-        self.action_bar_frame_14 = QFrame(self.frame)
-        self.action_bar_frame_14.setObjectName(u"action_bar_frame_14")
-        self.action_bar_frame_14.setMinimumSize(QSize(0, 39))
-        self.action_bar_frame_14.setFrameShape(QFrame.StyledPanel)
-        self.action_bar_frame_14.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_17 = QHBoxLayout(self.action_bar_frame_14)
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.title_label_5 = QLabel(self.action_bar_frame_14)
-        self.title_label_5.setObjectName(u"title_label_5")
-        self.title_label_5.setFont(font)
-        self.title_label_5.setStyleSheet(u"color: black;")
+        self.action_bar_frame_3 = QFrame(self.frame)
+        self.action_bar_frame_3.setObjectName(u"action_bar_frame_3")
+        self.action_bar_frame_3.setMinimumSize(QSize(0, 39))
+        self.action_bar_frame_3.setFrameShape(QFrame.StyledPanel)
+        self.action_bar_frame_3.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.action_bar_frame_3)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.comboBox_2 = QComboBox(self.action_bar_frame_3)
+        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.comboBox_2.setStyleSheet(u"background-color: white;\n"
+"border: 1px solid #ff6e40;")
 
-        self.horizontalLayout_17.addWidget(self.title_label_5)
+        self.horizontalLayout_6.addWidget(self.comboBox_2)
 
 
-        self.gridLayout.addWidget(self.action_bar_frame_14, 3, 1, 1, 1)
+        self.gridLayout.addWidget(self.action_bar_frame_3, 2, 1, 1, 1)
+
+        self.graphicsView_4 = PlotWidget(self.frame)
+        self.graphicsView_4.setObjectName(u"graphicsView_4")
+
+        self.gridLayout.addWidget(self.graphicsView_4, 1, 1, 1, 1)
 
 
         self.verticalLayout_3.addWidget(self.frame)
@@ -330,9 +302,9 @@ class DetailWindow(object):
         self.restore_button.setText("")
         self.maximize_button.setText("")
         self.close_button.setText("")
-        self.title_label_2.setText(QCoreApplication.translate("DetailWindow", u"PRODUCCION TOTAL  ", None))
-        self.title_label_3.setText(QCoreApplication.translate("DetailWindow", u"PRODUCCION POR OPERARIO ", None))
-        self.title_label_4.setText(QCoreApplication.translate("DetailWindow", u"MERMA TOTAL ", None))
         self.title_label_5.setText(QCoreApplication.translate("DetailWindow", u"MERMA POR OPERARIO ", None))
+        self.title_label_3.setText(QCoreApplication.translate("DetailWindow", u"PRODUCCION POR OPERARIO ", None))
+        self.title_label_2.setText(QCoreApplication.translate("DetailWindow", u"PRODUCCION TOTAL  ", None))
+        self.title_label_4.setText(QCoreApplication.translate("DetailWindow", u"MERMA TOTAL ", None))
     # retranslateUi
 
