@@ -4,6 +4,7 @@ from PySide6.QtCore import Qt
 from interface.graficas_produccion_window import DetailWindow
 from controllers.user_menu import UserMenuForm
 from database.proceso import DBProceso
+from database.usuario import DBUsuario
 #from interface import components
 import os
 from interface.general_custom_ui import GeneralCustomUi
@@ -91,10 +92,26 @@ class MainWindowForm(QWidget,DetailWindow):
         list_y = [ 150,111, 200, 800 , 100, 150, 200, 800 , 100, 150, 200, 800 , 100, 150, 200, 800 , 100, 150, 200, 800 , 100, 150, 200, 800 , 100, 150, 200, 800 , 100] 
         
         list_yy = [ 250,311, 400, 800 , 200, 150, 400, 900 , 100, 150,500, 800 , 100, 550, 200, 900 , 100, 250, 200, 300 , 100, 150, 200, 800 , 100, 150, 200, 800 , 100] 
-        line=PlotCurveItem(x=[x.timestamp() for x in list_x],y=list_y,pen='r',name="Adrian")
-        line2=PlotCurveItem(x=[x.timestamp() for x in list_x],y=list_yy,pen='b',name="Enrique")
-        self.graphicsView_4.addItem(line)
-        self.graphicsView_4.addItem(line2)
+        users_name = DBUsuario.select_name_usuario(self)
+
+
+        #proceso = DBProceso() 
+        #lista_grafica = []
+        #for i in range(29):
+        #    for user in users_name :
+        #       self.graphicsView_4.addItem(PlotCurveItem (x = [x.timestamp() for x in list_x],y = proceso.select_piezas_neto_fecha_user(i,user),pen = 'r', name = user[0]))
+
+
+
+        #for user in users_name:
+        #    print(user[0])
+        #    self.graphicsView_4.addItem(PlotCurveItem(x = [x.timestamp() for x in list_x],y = list_y,pen = 'r', name = user[0]))
+
+
+        #line=PlotCurveItem(x=[x.timestamp() for x in list_x],y=list_y,pen='r',name="Adrian")
+        #line2=PlotCurveItem(x=[x.timestamp() for x in list_x],y=list_yy,pen='b',name="Enrique")
+        #self.graphicsView_4.addItem(line)
+        #self.graphicsView_4.addItem(line2)
     
     def grafica03(self):
         axis = pg.DateAxisItem(orientation='bottom',tickFont=10,spacing=100,utcOffset=0,autoExpandTextSpace=True,showValues=True,showLastLabel=True)      
@@ -141,7 +158,7 @@ class MainWindowForm(QWidget,DetailWindow):
         proceso = DBProceso() 
         lista_grafica = []
         for i in range(29):
-            lista_grafica.append(proceso.select_piezas_neto_fecha(i))
+            lista_grafica.append(proceso.select_peso_fecha(i))
             print("PRCOSEOSDASODASD")
         
         list_y = [100, 150, 200, 800]
@@ -154,7 +171,7 @@ class MainWindowForm(QWidget,DetailWindow):
     def grafica02(self):
         axis = pg.DateAxisItem(orientation='bottom',tickFont=10,spacing=100,utcOffset=0,autoExpandTextSpace=True,showValues=True,showLastLabel=True)      
         #self.line = pg.PlotCurveItem(clear=True, pen="g")
-        #self.graphicsView.addItem(self.line)
+        #self.graphicsView.addItem(self.line)   
         self.graphicsView_2.setAxisItems({"bottom": axis})
         self.graphicsView_2.showGrid(x=True, y=True)
         #etiqueta nombre prouccion

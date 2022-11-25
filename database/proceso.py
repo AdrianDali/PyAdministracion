@@ -162,10 +162,56 @@ class DBProceso():
             print(e)
             raise
 
-    def select_piezas_neto_fecha_user(self,day):
+    def select_peso_fecha(self,day):
         now = datetime.now().strftime("%m")        
         print(now + "mes")
-        sql = "SELECT piezas_neto FROM proceso  WHERE hora_inicio BETWEEN '2022-{}-{} 00:00:00' AND '2022-{}-{} 23:59:00';".format(now,day, now,day)
+        sql = "SELECT peso_merma FROM proceso WHERE hora_inicio BETWEEN '2022-{}-{} 00:00:00' AND '2022-{}-{} 23:59:00';".format(now,day, now,day)
+        try:
+            conn = create_connection()
+            cur = conn.cursor()
+            cur.execute(sql)
+            maquinas = cur.fetchall()
+            lista = []
+            for maquina in maquinas:
+                lista.append(maquina[0])
+            cur.close()
+
+            sum_lista = 0
+
+            for i in lista:
+                sum_lista += i
+            return int(sum_lista)
+        except Exception as e:
+            print(e)
+            raise
+
+    def select_peso_fecha(self,day):
+        now = datetime.now().strftime("%m")        
+        print(now + "mes")
+        sql = "SELECT peso_merma FROM proceso WHERE hora_inicio BETWEEN '2022-{}-{} 00:00:00' AND '2022-{}-{} 23:59:00';".format(now,day, now,day)
+        try:
+            conn = create_connection()
+            cur = conn.cursor()
+            cur.execute(sql)
+            maquinas = cur.fetchall()
+            lista = []
+            for maquina in maquinas:
+                lista.append(maquina[0])
+            cur.close()
+
+            sum_lista = 0
+
+            for i in lista:
+                sum_lista += i
+            return int(sum_lista)
+        except Exception as e:
+            print(e)
+            raise
+
+    def select_piezas_neto_fecha_user(self,day,user):
+        now = datetime.now().strftime("%m")        
+        print(now + "mes")
+        sql = "SELECT p.piezas_neto FROM proceso AS p JOIN usuarios AS u WHERE u.nombre = '{}' AND hora_inicio BETWEEN '2022-{}-{} 00:00:00' AND '2022-{}-{} 23:59:00';".format(now,day,user ,now,day)
         try:
             conn = create_connection()
             cur = conn.cursor()

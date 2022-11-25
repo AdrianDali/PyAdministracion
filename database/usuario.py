@@ -113,6 +113,25 @@ class DBUsuario():
 
     
     def select_name_usuario(self):
+        sql = 'SELECT nombre from usuarios '
+        try:
+            connection = create_connection()
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            maquinas = cursor.fetchall()
+            lista  = []
+            for maquina in maquinas:
+                lista.append(maquina[0])
+            cursor.close()
+            return lista
+        except Exception as e:
+            print(e)
+            raise
+        finally:
+            connection.close()
+
+    
+    def select_name_usuario(self):
         sql = 'SELECT nombre from usuarios'
         try:
             connection = create_connection()

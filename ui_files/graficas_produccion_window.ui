@@ -260,16 +260,7 @@
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_8">
-                  <item>
-                   <widget class="QComboBox" name="comboBox_3">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: white;
-border: 1px solid #ff6e40;</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <layout class="QHBoxLayout" name="horizontalLayout_8"/>
                 </widget>
                </item>
                <item row="3" column="1">
@@ -323,16 +314,7 @@ border: 1px solid #ff6e40;</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_7">
-                  <item>
-                   <widget class="QComboBox" name="comboBox_4">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: white;
-border: 1px solid #ff6e40;</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <layout class="QHBoxLayout" name="horizontalLayout_7"/>
                 </widget>
                </item>
                <item row="0" column="1">
@@ -389,16 +371,7 @@ border: 1px solid #ff6e40;</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_12">
-                  <item>
-                   <widget class="QComboBox" name="comboBox">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: white;
-border: 1px solid #ff6e40;</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <layout class="QHBoxLayout" name="horizontalLayout_12"/>
                 </widget>
                </item>
                <item row="0" column="0">
@@ -492,16 +465,7 @@ border: 1px solid #ff6e40;</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_6">
-                  <item>
-                   <widget class="QComboBox" name="comboBox_2">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: white;
-border: 1px solid #ff6e40;</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <layout class="QHBoxLayout" name="horizontalLayout_6"/>
                 </widget>
                </item>
                <item row="1" column="1">
