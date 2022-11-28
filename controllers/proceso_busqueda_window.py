@@ -15,6 +15,7 @@ import pyqtgraph as pg
 from controllers.user_menu import UserMenuForm 
 from controllers.machine_menu import MachineMenuForm
 from controllers.part_menu import PartMenuForm
+from controllers.historial_proceso_window import MainWindowForm as historialProcesoWindow
 from random import randint 
 from PyQt5.QtGui import QPainter
 #from PyQt5.QtChart import QChart, QChartView, QBarCategoryAxis,QBarSet,QPercentBarSeries
@@ -46,10 +47,14 @@ class MainWindowForm(QWidget,MainWindow):
         self.comboBox.currentIndexChanged.connect(self.on_combobox_user_changed)
         self.comboBox_2.currentIndexChanged.connect(self.on_combobox_machine_changed)
         self.comboBox_3.currentIndexChanged.connect(self.on_combobox_part_changed)
-
+        self.new_recipe_button_3.clicked.connect(self.historial_window)
         #self.new_recipe_button.clicked.connect(self.new_recipe)
         #self.new_recipe_button_3.clicked.connect(self.machine_menu)
         #self.new_recipe_button_4.clicked.connect(self.part_menu)
+
+    def historial_window(self):
+        win = historialProcesoWindow()
+        win.show()
 
     def on_combobox_user_changed(self):
         user = self.comboBox.currentText()
