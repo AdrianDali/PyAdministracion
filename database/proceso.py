@@ -125,6 +125,9 @@ class DBProceso():
             print(e)
             raise
 
+    def select_all_users_name(self):
+        sql = 'SELECT nombre from usuarios' 
+
     def select_procesos_unfinish(self):
         sql = 'SELECT p.id_proceso, u.nombre as nombre_usuario,p.nombre, m.nombre_maquina, i.nombre_pieza, p.hora_inicio,p.numero_piezas , p.peso_merma,p.observaciones FROM proceso as p join maquina as m on m.id_maquina = p.id_maquina  join pieza as i on p.id_pieza = i.id_pieza join usuarios as u on u.id_usuario = p.id_nombre  where p.proceso_terminado = 1;'
         try:
@@ -208,10 +211,14 @@ class DBProceso():
             print(e)
             raise
 
-    def select_piezas_neto_fecha_user(self,day,user):
+
+    def select_peso_neto_fecha_user(self,day,user):
+        date = day.split(" ")
+
+        #print("dia" + date[0])
         now = datetime.now().strftime("%m")        
-        print(now + "mes")
-        sql = "SELECT p.piezas_neto FROM proceso AS p JOIN usuarios AS u WHERE u.nombre = '{}' AND hora_inicio BETWEEN '2022-{}-{} 00:00:00' AND '2022-{}-{} 23:59:00';".format(now,day,user ,now,day)
+        #print(now + "mes")
+        sql = "SELECT p.peso_merma FROM proceso AS p JOIN usuarios AS u WHERE u.nombre = '{}' AND hora_inicio BETWEEN '{} 00:00:00' AND '{} 23:59:00';".format(user,date[0],date[0])
         try:
             conn = create_connection()
             cur = conn.cursor()
@@ -226,6 +233,38 @@ class DBProceso():
 
             for i in lista:
                 sum_lista += i
+
+            print("LISTA PESOOOO::  ")
+            print(lista)
+            return int(sum_lista)
+        except Exception as e:
+            print(e)
+            raise
+
+    def select_piezas_neto_fecha_user(self,day,user):
+        date = day.split(" ")
+
+        #print("dia" + date[0])
+        now = datetime.now().strftime("%m")        
+        #print(now + "mes")
+        sql = "SELECT p.piezas_neto FROM proceso AS p JOIN usuarios AS u WHERE u.nombre = '{}' AND hora_inicio BETWEEN '{} 00:00:00' AND '{} 23:59:00';".format(user,date[0],date[0])
+        try:
+            conn = create_connection()
+            cur = conn.cursor()
+            cur.execute(sql)
+            maquinas = cur.fetchall()
+            lista = []
+            for maquina in maquinas:
+                lista.append(maquina[0])
+            cur.close()
+
+            sum_lista = 0
+
+            for i in lista:
+                sum_lista += i
+
+            #print("LISTA::  ")
+            #print(lista)
             return sum_lista
         except Exception as e:
             print(e)

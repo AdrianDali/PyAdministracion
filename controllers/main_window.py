@@ -16,8 +16,6 @@ from controllers.graficas_produccion_window import MainWindowForm as GraficasPro
 from controllers.proceso_filtrado_window import MainWindowForm as ProcesoFiltradoWindow
 from random import randint 
 from PyQt5.QtGui import QPainter
-#from PyQt5.QtChart import QChart, QChartView, QBarCategoryAxis,QBarSet,QPercentBarSeries
-#from pyqtgraph.opengl import GLViewWidget
 from pyqtgraph import plot,PlotWidget ,PlotItem, PlotDataItem, PlotCurveItem, GraphicsLayoutWidget,BarGraphItem
 
 
