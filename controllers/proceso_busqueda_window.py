@@ -47,7 +47,7 @@ class MainWindowForm(QWidget,MainWindow):
         self.comboBox.currentIndexChanged.connect(self.on_combobox_user_changed)
         self.comboBox_2.currentIndexChanged.connect(self.on_combobox_machine_changed)
         self.comboBox_3.currentIndexChanged.connect(self.on_combobox_part_changed)
-        #self.new_recipe_button_3.clicked.connect(self.historial_window)
+        self.new_recipe_button_3.clicked.connect(self.historial_window)
         #self.new_recipe_button.clicked.connect(self.new_recipe)
         #self.new_recipe_button_3.clicked.connect(self.machine_menu)
         #self.new_recipe_button_4.clicked.connect(self.part_menu)

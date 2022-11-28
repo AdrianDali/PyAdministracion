@@ -17,4 +17,8 @@ class MainWindowForm(QWidget,MainWindow):
         self.parent = parent 
         self.setupUi(self)
         self.ui = GeneralCustomUi(self)
+        self.config_table()
+
+    def config_table(self):
+        column_labels = ("ID","NOMBRE", "HORA DE INYECCION", "PESO MERMA")
         
