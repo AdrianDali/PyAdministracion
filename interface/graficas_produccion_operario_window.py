@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'proceso_busqueda_window.ui'
+## Form generated from reading UI file 'graficas_produccion_operario_window.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.3.2
 ##
@@ -16,21 +16,23 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QPushButton, QSizePolicy,
-    QSpacerItem, QTableWidget, QTableWidgetItem, QToolButton,
-    QVBoxLayout, QWidget)
+    QHeaderView, QLabel, QSizePolicy, QSpacerItem,
+    QTableWidget, QTableWidgetItem, QToolButton, QVBoxLayout,
+    QWidget)
 
-class MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1296, 567)
-        MainWindow.setStyleSheet(u"border-radius: 5px;")
-        self.verticalLayout = QVBoxLayout(MainWindow)
+from pyqtgraph import PlotWidget
+
+class DetailWindow(object):
+    def setupUi(self, DetailWindow):
+        if not DetailWindow.objectName():
+            DetailWindow.setObjectName(u"DetailWindow")
+        DetailWindow.resize(1402, 840)
+        DetailWindow.setStyleSheet(u"border-radius: 5px")
+        self.verticalLayout = QVBoxLayout(DetailWindow)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.central_widget_frame = QFrame(MainWindow)
+        self.central_widget_frame = QFrame(DetailWindow)
         self.central_widget_frame.setObjectName(u"central_widget_frame")
         self.central_widget_frame.setFrameShape(QFrame.StyledPanel)
         self.central_widget_frame.setFrameShadow(QFrame.Raised)
@@ -43,17 +45,9 @@ class MainWindow(object):
         self.background_frame.setStyleSheet(u"background-color: rgb(245, 240, 225);")
         self.background_frame.setFrameShape(QFrame.StyledPanel)
         self.background_frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.background_frame)
-        self.verticalLayout_3.setSpacing(0)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.content_frame = QFrame(self.background_frame)
-        self.content_frame.setObjectName(u"content_frame")
-        self.content_frame.setFrameShape(QFrame.StyledPanel)
-        self.content_frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_4 = QVBoxLayout(self.content_frame)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.top_bar_frame = QFrame(self.content_frame)
+        self.verticalLayout_2 = QVBoxLayout(self.background_frame)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.top_bar_frame = QFrame(self.background_frame)
         self.top_bar_frame.setObjectName(u"top_bar_frame")
         self.top_bar_frame.setMinimumSize(QSize(0, 40))
         self.top_bar_frame.setMaximumSize(QSize(16777215, 40))
@@ -75,7 +69,7 @@ class MainWindow(object):
         self.buttons_holder_frame = QFrame(self.top_bar_frame)
         self.buttons_holder_frame.setObjectName(u"buttons_holder_frame")
         self.buttons_holder_frame.setMinimumSize(QSize(0, 30))
-        self.buttons_holder_frame.setMaximumSize(QSize(110, 16777215))
+        self.buttons_holder_frame.setMaximumSize(QSize(113, 16777215))
         self.buttons_holder_frame.setFrameShape(QFrame.StyledPanel)
         self.buttons_holder_frame.setFrameShadow(QFrame.Raised)
         self.minimize_button = QToolButton(self.buttons_holder_frame)
@@ -101,7 +95,7 @@ class MainWindow(object):
         self.maximize_button.setIconSize(QSize(25, 25))
         self.close_button = QToolButton(self.buttons_holder_frame)
         self.close_button.setObjectName(u"close_button")
-        self.close_button.setGeometry(QRect(90, 0, 21, 22))
+        self.close_button.setGeometry(QRect(90, 0, 22, 22))
         icon3 = QIcon()
         icon3.addFile(u"../../pys6-recipes-organizer/assets/icons/close-window.png", QSize(), QIcon.Normal, QIcon.Off)
         self.close_button.setIcon(icon3)
@@ -110,8 +104,14 @@ class MainWindow(object):
         self.horizontalLayout_3.addWidget(self.buttons_holder_frame)
 
 
-        self.verticalLayout_4.addWidget(self.top_bar_frame)
+        self.verticalLayout_2.addWidget(self.top_bar_frame)
 
+        self.content_frame = QFrame(self.background_frame)
+        self.content_frame.setObjectName(u"content_frame")
+        self.content_frame.setFrameShape(QFrame.StyledPanel)
+        self.content_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.content_frame)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.action_bar_frame = QFrame(self.content_frame)
         self.action_bar_frame.setObjectName(u"action_bar_frame")
         self.action_bar_frame.setMinimumSize(QSize(0, 39))
@@ -143,48 +143,25 @@ class MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.comboBox_2)
 
-        self.label_6 = QLabel(self.action_bar_frame)
-        self.label_6.setObjectName(u"label_6")
-
-        self.horizontalLayout_2.addWidget(self.label_6)
-
-        self.comboBox_3 = QComboBox(self.action_bar_frame)
-        self.comboBox_3.setObjectName(u"comboBox_3")
-        self.comboBox_3.setStyleSheet(u"background-color: white;\n"
-"border: 1px solid #ff6e40;")
-
-        self.horizontalLayout_2.addWidget(self.comboBox_3)
-
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
-        self.new_recipe_button_3 = QPushButton(self.action_bar_frame)
-        self.new_recipe_button_3.setObjectName(u"new_recipe_button_3")
-        self.new_recipe_button_3.setMinimumSize(QSize(150, 30))
-        self.new_recipe_button_3.setFont(font)
-        self.new_recipe_button_3.setStyleSheet(u"QPushButton{\n"
-"	background-color : #ff6e40;\n"
-"	color: white;\n"
-"}\n"
-"QPushButton::hover {background-color : #ffc13b};")
-        icon4 = QIcon()
-        icon4.addFile(u"../../pys6-recipes-organizer/assets/icons/plus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.new_recipe_button_3.setIcon(icon4)
-        self.new_recipe_button_3.setIconSize(QSize(20, 20))
 
-        self.horizontalLayout_2.addWidget(self.new_recipe_button_3)
+        self.verticalLayout_3.addWidget(self.action_bar_frame)
+
+        self.tableWidget = QTableWidget(self.content_frame)
+        self.tableWidget.setObjectName(u"tableWidget")
+
+        self.verticalLayout_3.addWidget(self.tableWidget)
+
+        self.graphicsView = PlotWidget(self.content_frame)
+        self.graphicsView.setObjectName(u"graphicsView")
+
+        self.verticalLayout_3.addWidget(self.graphicsView)
 
 
-        self.verticalLayout_4.addWidget(self.action_bar_frame)
-
-        self.recipes_table = QTableWidget(self.content_frame)
-        self.recipes_table.setObjectName(u"recipes_table")
-
-        self.verticalLayout_4.addWidget(self.recipes_table)
-
-
-        self.verticalLayout_3.addWidget(self.content_frame)
+        self.verticalLayout_2.addWidget(self.content_frame)
 
 
         self.shadow_layout.addWidget(self.background_frame)
@@ -193,21 +170,19 @@ class MainWindow(object):
         self.verticalLayout.addWidget(self.central_widget_frame)
 
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(DetailWindow)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(DetailWindow)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Form", None))
-        self.title_label.setText(QCoreApplication.translate("MainWindow", u"Filtracion Monitoreo Proceso", None))
+    def retranslateUi(self, DetailWindow):
+        DetailWindow.setWindowTitle(QCoreApplication.translate("DetailWindow", u"Form", None))
+        self.title_label.setText(QCoreApplication.translate("DetailWindow", u"Produccion de operario ", None))
         self.minimize_button.setText("")
         self.restore_button.setText("")
         self.maximize_button.setText("")
         self.close_button.setText("")
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u" Usuario:", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Maquina:", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Pieza:", None))
-        self.new_recipe_button_3.setText(QCoreApplication.translate("MainWindow", u"Historial Operario", None))
+        self.label_4.setText(QCoreApplication.translate("DetailWindow", u" Usuario:", None))
+        self.label_5.setText(QCoreApplication.translate("DetailWindow", u"Proceso: :", None))
     # retranslateUi
 
