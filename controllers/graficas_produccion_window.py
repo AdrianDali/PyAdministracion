@@ -99,7 +99,7 @@ class MainWindowForm(QWidget,DetailWindow):
         #lista_grafica = []
         #for i in range(29):
         #    for user in users_name :
-        #       self.graphicsView_4.addItem(PlotCurveItem (x = [x.timestamp() for x in list_x],y = proceso.select_piezas_neto_fecha_user(i,user),pen = 'r', name = user[0]))
+        # V         self.graphicsView_4.addItem(PlotCurveItem (x = [x.timestamp() for x in list_x],y = proceso.select_piezas_neto_fecha_user(i,user),pen = 'r', name = user[0]))
 
 
 
