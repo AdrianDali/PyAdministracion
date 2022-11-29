@@ -152,9 +152,23 @@ class DBProceso():
             cursor.execute(sql)
             procesos = cursor.fetchall()
             cursor.close()
-            print("##############PROCESO##############")
-            print(procesos)
-            print("##############PROCESO##############")
+  
+            return procesos
+
+        except Exception as e:
+            print(e)
+            raise
+
+    def select_hora_historial(self, u_nombre , p_nombre):
+        sql = ' select pu.hora from proceso as p join proceso_usuario as pu on p.id_proceso = pu.id_proceso join usuarios as u on u.id_usuario = pu.id_usuario where u.nombre = "{}" and p.nombre = "{}"; '.format(u_nombre, p_nombre)
+        try:
+            
+            connection = create_connection()
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            procesos = cursor.fetchall()
+            cursor.close()
+         
             return procesos
 
         except Exception as e:

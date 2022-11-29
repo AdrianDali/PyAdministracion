@@ -24,11 +24,43 @@ class MainWindowForm(QWidget,MainWindow):
         self.comboBox_2.addItems(users)
         self.comboBox_2.currentIndexChanged.connect(self.set_data)
         self.comboBox_5.currentIndexChanged.connect(self.set_data_table)
-        self.grafica01()
+        
 
     def grafica01(self):
-        bars = BarGraphItem(x=[1,2,3,4,5], height=[1,2,3,4,5], width=0.3, brush='r', pen='r', pxMode=False, name="Bar Graph", opts=None, connect='finite', stepMode=False, fillLevel=0, fillBrush=None, fillOutline=True, antialias=True)
-        self.graphicsView_4.addItem(bars)
+        axis = pg.DateAxisItem(orientation='bottom',tickFont=10,spacing=100,utcOffset=0,autoExpandTextSpace=True,showValues=True,showLastLabel=True) 
+        self.graphicsView_4.setAxisItems({"bottom": axis})
+        self.graphicsView_4.showGrid(x=True, y=True)
+        self.graphicsView_4.setLabel('left', "Piezas")
+        #etiqueta tiempo 
+        self.graphicsView_4.setLabel('bottom', "hora")
+        self.graphicsView_4.setMouseEnabled(x=False, y=False)
+        self.graphicsView_4.addLegend()
+
+        hora = DBProceso().select_hora_historial(self.comboBox_2.currentText(),self.comboBox_5.currentText())
+        hora02 = []
+        j =0
+        for h in hora:
+            ti = hora[j]
+            tf = ti[0]
+            nf = str(tf)
+            j = j + 1 
+            hora_completa = "2018-02-02 " + nf 
+            hora02.append(datetime.strptime(hora_completa,"%Y-%m-%d %H:%M:%S"))
+        i =0
+        lista_piezas = [] 
+        for h in hora:
+            i = i+1
+            lista_piezas.append(i)
+
+        print("HORA02")
+
+        print(hora02)
+        
+        self.graphicsView_4.clear()
+        self.graphicsView_4.addItem(PlotCurveItem(x = [x.timestamp() for x in hora02], y = lista_piezas, pen = 'r'))
+        
+
+
 
     def set_data_table(self):
         user_select = self.comboBox_2.currentText()
@@ -37,32 +69,32 @@ class MainWindowForm(QWidget,MainWindow):
         proceso = DBProceso().select_historial(user_select ,proceso_select)
         
      
-        print(proceso)
+        #print(proceso)
 
         self.populate_table(proceso)
+        self.grafica01()
 
     def populate_table(self, data):
    
-        print(data)
+        #print(data)
         self.tableWidget.setRowCount(len(data))
 
         for (index_row , row) in enumerate(data):
-            print(index_row)
-            print(row)
+            #print(index_row)
+            #print(row)
             for (index_cell, cell) in enumerate(row):
-                print("cell")
-                print(cell)
+                #print("cell")
+                #print(cell)
                 self.tableWidget.setItem(
                      index_row, index_cell, QTableWidgetItem(str(cell))
                 )
 
     def set_data(self):
+        lista_procesos = []
         user_select = self.comboBox_2.currentText()
         usuario = DBUsuario(nombre=user_select,mode = "select")
-        print("user select")
         lista_procesos = DBProceso().select_procesos_user(usuario.id_usuario)
-        print("##############################")
-        print(lista_procesos)
+
         lista_procesos.insert(0,("Seleccione un proceso"))
         self.comboBox_5.addItems(lista_procesos)
 
