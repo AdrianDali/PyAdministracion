@@ -125,8 +125,41 @@ class DBProceso():
             print(e)
             raise
 
+    def select_procesos_user(self,id_usuario):
+        sql = 'select nombre from proceso where id_nombre  = {};'.format(id_usuario)
+        try:
+            conn = create_connection()
+            cur = conn.cursor()
+            cur.execute(sql)
+            maquinas = cur.fetchall()
+            lista = []
+            for maquina in maquinas:
+                lista.append(maquina[0])
+            cur.close()
+            return lista
+        except Exception as e:
+            print(e)
+            raise
+
     def select_all_users_name(self):
         sql = 'SELECT nombre from usuarios' 
+
+    def select_historial(self, u_nombre , p_nombre):
+        sql = ' select u.nombre, p.nombre ,pu.hora, p.peso_merma from proceso as p join proceso_usuario as pu on p.id_proceso = pu.id_proceso join usuarios as u on u.id_usuario = pu.id_usuario where u.nombre = "{}" and p.nombre = "{}"; '.format(u_nombre, p_nombre)
+        try:
+            connection = create_connection()
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            procesos = cursor.fetchall()
+            cursor.close()
+            print("##############PROCESO##############")
+            print(procesos)
+            print("##############PROCESO##############")
+            return procesos
+
+        except Exception as e:
+            print(e)
+            raise
 
     def select_procesos_unfinish(self):
         sql = 'SELECT p.id_proceso, u.nombre as nombre_usuario,p.nombre, m.nombre_maquina, i.nombre_pieza, p.hora_inicio,p.numero_piezas , p.peso_merma,p.observaciones FROM proceso as p join maquina as m on m.id_maquina = p.id_maquina  join pieza as i on p.id_pieza = i.id_pieza join usuarios as u on u.id_usuario = p.id_nombre  where p.proceso_terminado = 1;'

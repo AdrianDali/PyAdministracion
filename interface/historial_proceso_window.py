@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'historial_proceso_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.0
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,8 +16,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QLabel, QSizePolicy, QToolButton, QVBoxLayout,
-    QWidget)
+    QHeaderView, QLabel, QSizePolicy, QTableWidget,
+    QTableWidgetItem, QToolButton, QVBoxLayout, QWidget)
 
 from pyqtgraph import PlotWidget
 
@@ -166,6 +166,11 @@ class MainWindow(object):
 
 
         self.verticalLayout_4.addWidget(self.action_bar_frame)
+
+        self.tableWidget = QTableWidget(self.content_frame)
+        self.tableWidget.setObjectName(u"tableWidget")
+
+        self.verticalLayout_4.addWidget(self.tableWidget)
 
         self.graphicsView_4 = PlotWidget(self.content_frame)
         self.graphicsView_4.setObjectName(u"graphicsView_4")

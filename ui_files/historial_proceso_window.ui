@@ -342,6 +342,9 @@
              </widget>
             </item>
             <item>
+             <widget class="QTableWidget" name="tableWidget"/>
+            </item>
+            <item>
              <widget class="PlotWidget" name="graphicsView_4"/>
             </item>
            </layout>

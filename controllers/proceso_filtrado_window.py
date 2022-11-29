@@ -18,7 +18,7 @@ from PyQt5.QtGui import QPainter
 #from PyQt5.QtChart import QChart, QChartView, QBarCategoryAxis,QBarSet,QPercentBarSeries
 #from pyqtgraph.opengl import GLViewWidget
 from pyqtgraph import plot,PlotWidget ,PlotItem, PlotDataItem, PlotCurveItem, GraphicsLayoutWidget,BarGraphItem
-
+from controllers.historial_proceso_window import MainWindowForm as historialProcesoWindow
 
 class MainWindowForm(QWidget,MainWindow):
 
@@ -33,6 +33,11 @@ class MainWindowForm(QWidget,MainWindow):
         #self.new_recipe_button_3.clicked.connect(self.machine_menu)
         #self.new_recipe_button_4.clicked.connect(self.part_menu)
         self.new_recipe_button_2.clicked.connect(self.proceso_filtrado)
+        self.new_recipe_button_3.clicked.connect(self.historial_window)
+
+    def historial_window(self):
+        win = historialProcesoWindow()
+        win.show()
 
     def proceso_filtrado(self):
         win = ProcesoFiltradoForm()

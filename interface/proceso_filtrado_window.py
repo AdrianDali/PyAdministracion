@@ -123,6 +123,22 @@ class MainWindow(object):
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
+        self.new_recipe_button_3 = QPushButton(self.action_bar_frame)
+        self.new_recipe_button_3.setObjectName(u"new_recipe_button_3")
+        self.new_recipe_button_3.setMinimumSize(QSize(150, 30))
+        self.new_recipe_button_3.setFont(font)
+        self.new_recipe_button_3.setStyleSheet(u"QPushButton{\n"
+"	background-color : #ff6e40;\n"
+"	color: white;\n"
+"}\n"
+"QPushButton::hover {background-color : #ffc13b};")
+        icon4 = QIcon()
+        icon4.addFile(u"../../pys6-recipes-organizer/assets/icons/plus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.new_recipe_button_3.setIcon(icon4)
+        self.new_recipe_button_3.setIconSize(QSize(20, 20))
+
+        self.horizontalLayout_2.addWidget(self.new_recipe_button_3)
+
         self.new_recipe_button_2 = QPushButton(self.action_bar_frame)
         self.new_recipe_button_2.setObjectName(u"new_recipe_button_2")
         self.new_recipe_button_2.setMinimumSize(QSize(150, 30))
@@ -132,8 +148,6 @@ class MainWindow(object):
 "	color: white;\n"
 "}\n"
 "QPushButton::hover {background-color : #ffc13b};")
-        icon4 = QIcon()
-        icon4.addFile(u"../../pys6-recipes-organizer/assets/icons/plus.png", QSize(), QIcon.Normal, QIcon.Off)
         self.new_recipe_button_2.setIcon(icon4)
         self.new_recipe_button_2.setIconSize(QSize(20, 20))
 
@@ -169,6 +183,7 @@ class MainWindow(object):
         self.restore_button.setText("")
         self.maximize_button.setText("")
         self.close_button.setText("")
+        self.new_recipe_button_3.setText(QCoreApplication.translate("MainWindow", u"Historial Operario", None))
         self.new_recipe_button_2.setText(QCoreApplication.translate("MainWindow", u"Filtrar Graficas", None))
     # retranslateUi
 

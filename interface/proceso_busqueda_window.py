@@ -16,9 +16,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
-    QHeaderView, QLabel, QPushButton, QSizePolicy,
-    QSpacerItem, QTableWidget, QTableWidgetItem, QToolButton,
-    QVBoxLayout, QWidget)
+    QHeaderView, QLabel, QSizePolicy, QSpacerItem,
+    QTableWidget, QTableWidgetItem, QToolButton, QVBoxLayout,
+    QWidget)
 
 class MainWindow(object):
     def setupUi(self, MainWindow):
@@ -159,22 +159,6 @@ class MainWindow(object):
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer)
 
-        self.new_recipe_button_3 = QPushButton(self.action_bar_frame)
-        self.new_recipe_button_3.setObjectName(u"new_recipe_button_3")
-        self.new_recipe_button_3.setMinimumSize(QSize(150, 30))
-        self.new_recipe_button_3.setFont(font)
-        self.new_recipe_button_3.setStyleSheet(u"QPushButton{\n"
-"	background-color : #ff6e40;\n"
-"	color: white;\n"
-"}\n"
-"QPushButton::hover {background-color : #ffc13b};")
-        icon4 = QIcon()
-        icon4.addFile(u"../../pys6-recipes-organizer/assets/icons/plus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.new_recipe_button_3.setIcon(icon4)
-        self.new_recipe_button_3.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout_2.addWidget(self.new_recipe_button_3)
-
 
         self.verticalLayout_4.addWidget(self.action_bar_frame)
 
@@ -208,6 +192,5 @@ class MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u" Usuario:", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Maquina:", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Pieza:", None))
-        self.new_recipe_button_3.setText(QCoreApplication.translate("MainWindow", u"Historial Operario", None))
     # retranslateUi
 

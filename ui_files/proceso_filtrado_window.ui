@@ -278,6 +278,42 @@
                 </spacer>
                </item>
                <item>
+                <widget class="QPushButton" name="new_recipe_button_3">
+                 <property name="minimumSize">
+                  <size>
+                   <width>150</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	background-color : #ff6e40;
+	color: white;
+}
+QPushButton::hover {background-color : #ffc13b};</string>
+                 </property>
+                 <property name="text">
+                  <string>Historial Operario</string>
+                 </property>
+                 <property name="icon">
+                  <iconset>
+                   <normaloff>../../pys6-recipes-organizer/assets/icons/plus.png</normaloff>../../pys6-recipes-organizer/assets/icons/plus.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <widget class="QPushButton" name="new_recipe_button_2">
                  <property name="minimumSize">
                   <size>
