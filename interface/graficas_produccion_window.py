@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'graficas_produccion_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.0
+## Created by: Qt User Interface Compiler version 6.3.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
-    QHBoxLayout, QLabel, QSizePolicy, QToolButton,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QLabel, QSizePolicy, QToolButton, QVBoxLayout,
+    QWidget)
 
 from pyqtgraph import PlotWidget
 
@@ -129,13 +129,6 @@ class DetailWindow(object):
         self.action_bar_frame_5.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_8 = QHBoxLayout(self.action_bar_frame_5)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.comboBox_3 = QComboBox(self.action_bar_frame_5)
-        self.comboBox_3.setObjectName(u"comboBox_3")
-        self.comboBox_3.setStyleSheet(u"background-color: white;\n"
-"border: 1px solid #ff6e40;")
-
-        self.horizontalLayout_8.addWidget(self.comboBox_3)
-
 
         self.gridLayout.addWidget(self.action_bar_frame_5, 5, 0, 1, 1)
 
@@ -164,13 +157,6 @@ class DetailWindow(object):
         self.action_bar_frame_4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.action_bar_frame_4)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.comboBox_4 = QComboBox(self.action_bar_frame_4)
-        self.comboBox_4.setObjectName(u"comboBox_4")
-        self.comboBox_4.setStyleSheet(u"background-color: white;\n"
-"border: 1px solid #ff6e40;")
-
-        self.horizontalLayout_7.addWidget(self.comboBox_4)
-
 
         self.gridLayout.addWidget(self.action_bar_frame_4, 5, 1, 1, 1)
 
@@ -204,13 +190,6 @@ class DetailWindow(object):
         self.action_bar_frame_9.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.action_bar_frame_9)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.comboBox = QComboBox(self.action_bar_frame_9)
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setStyleSheet(u"background-color: white;\n"
-"border: 1px solid #ff6e40;")
-
-        self.horizontalLayout_12.addWidget(self.comboBox)
-
 
         self.gridLayout.addWidget(self.action_bar_frame_9, 2, 0, 1, 1)
 
@@ -262,13 +241,6 @@ class DetailWindow(object):
         self.action_bar_frame_3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.action_bar_frame_3)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.comboBox_2 = QComboBox(self.action_bar_frame_3)
-        self.comboBox_2.setObjectName(u"comboBox_2")
-        self.comboBox_2.setStyleSheet(u"background-color: white;\n"
-"border: 1px solid #ff6e40;")
-
-        self.horizontalLayout_6.addWidget(self.comboBox_2)
-
 
         self.gridLayout.addWidget(self.action_bar_frame_3, 2, 1, 1, 1)
 

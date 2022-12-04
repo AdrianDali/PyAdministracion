@@ -8,7 +8,7 @@ import os
 from interface.general_custom_ui import GeneralCustomUi
 
 from database.usuario import DBUsuario
-
+from controllers.popoup_information import PopoupInformation
 
 class DeleteUserWindowForm(QWidget,DetailWindow):
 
@@ -21,7 +21,7 @@ class DeleteUserWindowForm(QWidget,DetailWindow):
         self.add_edit_button_3.clicked.connect(self.delete_user)
         self.cancel_button.clicked.connect(self.close)
 
-    def close(self):
+    def closing(self):
         self.close()
 
     def delete_user(self):
@@ -29,7 +29,8 @@ class DeleteUserWindowForm(QWidget,DetailWindow):
         user_delete = self.comboBox.currentText()
         print(user_delete)
         DBUsuario(nombre = user_delete).delete_usuario() 
-        self.comboBox.clear()
-        self.comboBox.addItems(DBUsuario().select_name_usuario_enabled())
-
+        #self.comboBox.clear()
+        #self.comboBox.addItems(DBUsuario().select_name_usuario_enabled())
+        self.closing()
+        PopoupInformation().show()
         

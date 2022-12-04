@@ -86,6 +86,17 @@ class DBPieza():
             print(e)
             raise
 
+    def delete_pieza(self):
+        sql = 'DELETE FROM pieza WHERE nombre_pieza = "{}"'.format(self._nombre)
+        try:
+            connection = create_connection()
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            connection.commit()
+            cursor.close()
+        except Exception as e:
+            print(e)
+            raise
 
 
     @property

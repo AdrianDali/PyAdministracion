@@ -9,7 +9,7 @@ from controllers.edit_part_window import EditPartWindow
 #from interface import components
 import os
 from interface.general_custom_ui import GeneralCustomUi
-
+from controllers.delete_part_window import DeletePartWindow
 
 class PartMenuForm(QWidget,DetailWindow):
 
@@ -21,7 +21,12 @@ class PartMenuForm(QWidget,DetailWindow):
         self.set_table_data()
         self.view_button.clicked.connect(self.createPart)
         self.edit_button.clicked.connect(self.EditPart)
+        self.finish_button.clicked.connect(self.deletePart)
 
+    def deletePart(self):
+        self.part_machine_window = DeletePartWindow()
+        self.part_machine_window.show()
+        self.close()
 
     def EditPart(self):
         self.part_machine_window = EditPartWindow()

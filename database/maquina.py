@@ -135,7 +135,19 @@ class DBMaquina():
         except Exception as e:
             print(e)
             raise
+    
 
+    def delete_maquina(self):
+        sql = 'DELETE FROM maquina WHERE nombre_maquina = "{}"'.format(self._nombre)
+        try:
+            connection = create_connection()
+            cursor = connection.cursor()
+            cursor.execute(sql)
+            connection.commit()
+            cursor.close()
+        except Exception as e:
+            print(e)
+            raise
     
     @property 
     def id_maquina(self):
