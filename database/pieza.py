@@ -9,7 +9,7 @@ class DBPieza():
 
         if self._nombre != '' and mode == 'new':
             self._id_pieza = randrange(1111,9999,1)
-            sql = 'INSERT INTO pieza(id_pieza,nombre_pieza) VALUES("{}","{}")'.format(self._id_pieza, self._nombre)
+            sql = 'INSERT INTO pieza(id_pieza,nombre_pieza, peso_merma) VALUES("{}","{}", 6.66 )'.format(self._id_pieza, self._nombre)
             try:
                 connection = create_connection()
                 cursor = connection.cursor()

@@ -2,10 +2,10 @@ from mysql import connector
 
 
 config = {
-    'user': 'root',
+    'user': 'root03',
     'password': '1234',
-    'host': 'localhost',
-    'database': 'monitoreo_trabajo',
+    'host': '192.168.0.141',
+    'database': 'monitoreo_trabajo_02',
 }
 
 def create_connection():

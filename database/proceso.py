@@ -204,7 +204,7 @@ class DBProceso():
             cur.close()
 
             sum_lista = 0
-
+            
             for i in lista:
                 sum_lista += i
             return sum_lista
